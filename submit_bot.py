@@ -1,10 +1,11 @@
 import praw
 
 
-reddit = praw.Reddit(client_id='Y_4hNDDcE9PmaA',
-                     client_secret='N_rZa6RiMhZNq9KqrRNuKsQo_aOdAA',
-                     user_agent='<console:crime_bot:0.0.1 (by u/Sure-Ad7152)>',
-                     username="Sure-Ad7152"
+reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',
+                     client_secret='jXA-c7OqNOH3xPKu0crJzzaNxymldQ',
+                     user_agent='<console:crime_bot:0.0.1 (u/bot_user2886)>',
+                     username="bot_user2886",
+                     password="grad2009"
                      )
 
 "Code to post from command line to subreddit"
