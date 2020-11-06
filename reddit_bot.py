@@ -1,5 +1,6 @@
 import praw
 
+decision = input("Do you want to post or view a subreddit? Enter post/view:")
 
 "Requirement 1 - Calling an API and getting data from a website"
 reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',

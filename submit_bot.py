@@ -8,6 +8,7 @@ reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',
                      password="grad2009"
                      )
 
+
 "Code to post from command line to subreddit"
 subreddits = ['TrueCrime']
 pos = 0
