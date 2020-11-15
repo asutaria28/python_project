@@ -1,6 +1,5 @@
 import praw
 
-decision = input("Do you want to post or view a subreddit? Enter post/view:")
 
 "Requirement 1 - Calling an API and getting data from a website"
 reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',
@@ -9,12 +8,12 @@ reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',
                      username="bot_user2886"
                      )
 
-"Requirement 2 - Populating a class"
+"Requirement 2 - Calling 2/3 functions for data retrieval"
+
+"Retrieving top 10 instances in the hot list on a subreddit"
 
 
-class TrueCrime:
-
-    "Retrieving top 10 instances in the hot list on a subreddit"
+def TrueCrime():
     subreddit = reddit.subreddit("TrueCrime")
 
     for post in subreddit.hot(limit=10):
@@ -23,7 +22,10 @@ class TrueCrime:
         print(post.url)
 
 
-class SerialKillers:
+TrueCrime()
+
+
+def SerialKillers():
 
     subreddit = reddit.subreddit("serialkillers")
 
@@ -31,3 +33,6 @@ class SerialKillers:
         print('-------------------')
         print(post.title)
         print(post.url)
+
+
+SerialKillers()
