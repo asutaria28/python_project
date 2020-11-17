@@ -1,5 +1,5 @@
 import praw
-
+from time import sleep
 
 "Requirement 1 - Calling an API and getting data from a website"
 reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',
@@ -13,7 +13,7 @@ you = reddit.redditor('bot_user2886')
 subreddit = reddit.subreddit('TrueCrime')
 
 keywords = ['murder', 'serial', 'update']
-ignore_users = ['baduser1', 'baduser2', 'baduser3']  # case SENSITIVE
+ignore_users = ['baduser1', 'baduser2', 'baduser3']
 
 already_alerted_submissions = []
 
@@ -27,16 +27,15 @@ def main():
             if comment.submission.id in already_alerted_submissions:
                 continue
 
-            if comment.author:  # if comment author hasn't deleted
+            if comment.author:
                 if comment.author.name in ignore_users:
                     continue
 
             for kw in keywords:
-                if kw.lower() in comment.body.lower():  # case insensitive check
-
+                if kw.lower() in comment.body.lower():
                     msg = '[Keyword {0} detected](http://www.reddit.com{1})'.format(kw,
                                                                                     comment.permalink())
-                    you.message(subject='keyword detected', message=msg)  # send the PM
+                    you.message(subject='keyword detected', message=msg)
                     print(msg)
 
                     already_alerted_submissions.append(comment.submission.id)
