@@ -1,12 +1,11 @@
 import praw
-import os
 
 
 reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',
-                     client_secret=os.environ.get('Client_Secret'),
+                     client_secret='jXA-c7OqNOH3xPKu0crJzzaNxyml',
                      user_agent='<console:crime_bot:0.0.1 (u/bot_user2886)>',
                      username="bot_user2886",
-                     password=os.environ.get('User_Password')
+                     password="grad2009"
                      )
 
 
