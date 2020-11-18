@@ -12,12 +12,15 @@ reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',
 you = reddit.redditor('bot_user2886')
 subreddit = reddit.subreddit('TrueCrime')
 
+"Requirement 3 - Create a list and use an item to retrieve results"
 keywords = ['murder', 'serial', 'update']
 ignore_users = ['baduser1', 'baduser2', 'baduser3']
 
 already_alerted_submissions = []
 
 comment_stream = subreddit.stream.comments()
+
+"Requirement 2 - Calling 3rd function"
 
 
 def main():
@@ -41,10 +44,9 @@ def main():
                     already_alerted_submissions.append(comment.submission.id)
 
     except Exception as e:
+        raise
         print('There was an error: ' + str(e))
-        sleep(60)  # wait for 60 seconds before restarting
+        sleep(60)
         main()
 
-
-if __name__ == '__main__':
     main()
