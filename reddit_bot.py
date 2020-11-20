@@ -8,7 +8,7 @@ reddit = praw.Reddit(client_id='VRDpHKf3yx2UDw',
                      username="bot_user2886"
                      )
 
-"Requirement 2 - Calling 2/3 functions for data retrieval"
+"Requirement 2 - Calling 3/3 functions for data retrieval"
 
 "Retrieving top 10 instances in the hot list on a subreddit"
 
@@ -17,9 +17,12 @@ def TrueCrime():
     subreddit = reddit.subreddit("TrueCrime")
 
     for post in subreddit.hot(limit=10):
+        "Requirement 3 - Analyze text and display information about it"
+        mes = len(post.title.split(" "))
         print('-------------------')
         print(post.title)
         print(post.url)
+        print("The number of words in string are : " + str(mes))
 
 
 TrueCrime()
@@ -36,3 +39,15 @@ def SerialKillers():
 
 
 SerialKillers()
+
+
+def TCDiscussion():
+    subreddit = reddit.subreddit("TrueCrimeDiscussion")
+
+    for post in subreddit.hot(limit=10):
+        print('-------------------')
+        print(post.title)
+        print(post.url)
+
+
+TCDiscussion()
